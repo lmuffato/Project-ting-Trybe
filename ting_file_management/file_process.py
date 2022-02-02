@@ -24,4 +24,11 @@ def remove(instance):
 
 
 def file_metadata(instance, position):
-    """Aqui irá sua implementação"""
+    path_file = instance.search(position)
+    info = txt_importer(path_file)
+    answer_dict = {
+        "nome_do_arquivo": path_file,
+        "qtd_linhas": len(info),
+        "linhas_do_arquivo": info,
+    }
+    sys.stdout.write(str(answer_dict))
