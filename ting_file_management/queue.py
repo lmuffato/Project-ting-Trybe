@@ -9,7 +9,9 @@ class Queue:
         self._list.append(value)
 
     def dequeue(self):
-        """Aqui irá sua implementação"""
+        removed_item = self._list[0]
+        self._list.pop(0)
+        return removed_item
 
     def search(self, index):
         """Aqui irá sua implementação"""
