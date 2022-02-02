@@ -14,4 +14,6 @@ class Queue:
         return removed_item
 
     def search(self, index):
+        if self.__len__() == 0 or index < 0 or index > self.__len__():
+            raise IndexError
         return self._list[index]
