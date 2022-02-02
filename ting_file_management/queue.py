@@ -14,4 +14,4 @@ class Queue:
         return removed_item
 
     def search(self, index):
-        """Aqui irá sua implementação"""
+        return self._list[index]
