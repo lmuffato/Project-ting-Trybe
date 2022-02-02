@@ -1,5 +1,6 @@
 {
   "conventionalCommits.scopes": [
-    "queue"
+    "queue",
+    "file_management"
   ]
 }
