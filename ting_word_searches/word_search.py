@@ -10,9 +10,10 @@ def exists_word(word, instance):
             if word.lower() in line.lower():
                 found_word.append({"linha": index})
             index += 1
-        return_list.append(
-            {"palavra": word, "arquivo": file, "ocorrencias": found_word}
-        )
+        if len(found_word) != 0:
+            return_list.append(
+                {"palavra": word, "arquivo": file, "ocorrencias": found_word}
+            )
     return return_list
 
 
