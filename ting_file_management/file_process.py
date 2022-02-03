@@ -22,7 +22,7 @@ def remove(instance):
 
     if isEmpty == 0:
         return print('Não há elementos')
-    
+
     obj = instance.dequeue()
     path_file = obj['nome_do_arquivo']
 
@@ -35,4 +35,3 @@ def file_metadata(instance, position):
         sys.stdout.write(str(data))
     except IndexError:
         sys.stderr.write('Posição inválida')
-
