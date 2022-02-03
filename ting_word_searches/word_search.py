@@ -21,7 +21,7 @@ def exists_word(word, instance):
 
 
 def search_by_word(word, instance):
-    word_ocurrences_list = []
+    word_ocurrences_list = list()
     for txt_file in instance.queue:
         data = {
             "palavra": word,
@@ -40,4 +40,8 @@ def search_by_word(word, instance):
                 })
                 if len(word_ocurrences_list[index]["ocorrencias"]) > 0:
                     return word_ocurrences_list
-        return []
+        return list()
+
+# Source:
+# https://stackoverflow.com/questions/6797984/how-do-i-lowercase-a-string-in-python
+# https://realpython.com/python-enumerate/

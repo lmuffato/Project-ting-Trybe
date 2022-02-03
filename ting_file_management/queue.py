@@ -20,3 +20,7 @@ class Queue:
             return self.queue[index]
         else:
             raise IndexError
+
+# Source:
+# https://pythontic.com/containers/deque/popleft
+# https://pythontic.com/containers/deque/introduction
