@@ -1,4 +1,4 @@
-from sys import stdout
+import sys
 from ting_file_management.file_management import txt_importer
 
 
@@ -15,7 +15,7 @@ def process(path_file, instance):
         return None
     instance.enqueue(print_dict)
     for key in print_dict.keys():
-        print(f'{key}:{print_dict[key]}', file=stdout)
+        print(f'{key}:{print_dict[key]}', file=sys.stdout)
 
 
 def remove(instance):
@@ -28,4 +28,8 @@ def remove(instance):
 
 
 def file_metadata(instance, position):
-    """Aqui irá sua implementação"""
+    try:
+        print(instance.search(position))
+    except IndexError:
+        print('dentro except')
+        print('Posição inválida', file=sys.stderr)
