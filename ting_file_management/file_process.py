@@ -25,4 +25,14 @@ def remove(instance):
 
 
 def file_metadata(instance, position):
-    """Aqui irá sua implementação"""
+    try:
+        file_metadata = instance.search(position)
+        info = txt_importer(file_metadata)
+        result_dict = {
+            "nome_do_arquivo": file_metadata,
+            "qtd_linhas": len(info),
+            "linhas_do_arquivo": info,
+        }
+        sys.stdout.write(str(result_dict))
+    except IndexError:
+        sys.stderr.write('Posição inválida\n')
