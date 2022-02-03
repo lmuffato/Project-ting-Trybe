@@ -12,8 +12,17 @@ from os.path import exists
 # cornflakes prefere: "if not exists(path_file):"
 # Porém ambas as opções passam no teste!
 
+# Referência: Como usar o .splitline()
+# https://www.kite.com/python/answers/
+# how-to-read-a-newline-delimited-text-file-in-python
+
 def txt_importer(path_file):
+    if not exists(path_file):
+        return print(f'Arquivo {path_file} não encontrado', file=sys.stderr)
+
     if (path_file[-3:] != 'txt'):
         print('Formato inválido', file=sys.stderr)
-    if not exists(path_file):
-        print('Arquivo {} não encontrado'.format(path_file), file=sys.stderr)
+
+    with open(path_file, mode='r') as arquivo_txt:
+        linhas = arquivo_txt.read().splitlines()
+        return linhas
