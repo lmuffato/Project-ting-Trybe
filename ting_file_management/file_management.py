@@ -1,6 +1,6 @@
 import sys
-
 # sys visto no repositório do Rafael Medeiros
+
 
 def txt_importer(path_file):
     try:
