@@ -9,6 +9,7 @@ def process(path_file, instance):
         "qtd_linhas": len(lines),
         "linhas_do_arquivo": lines,
     }
+    print(print_dict)
     mapped = list(map(lambda x: x["nome_do_arquivo"], instance.queue))
     if path_file in mapped:
         return None
@@ -18,7 +19,12 @@ def process(path_file, instance):
 
 
 def remove(instance):
-    """Aqui irá sua implementação"""
+    if len(instance.queue) < 1:
+        print('Não há elementos')
+        return None
+    removed = instance.dequeue()
+    name = removed["nome_do_arquivo"]
+    print(f'Arquivo {name} removido com sucesso')
 
 
 def file_metadata(instance, position):
