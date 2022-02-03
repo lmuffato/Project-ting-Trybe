@@ -24,3 +24,5 @@ class Queue:
 # Source:
 # https://pythontic.com/containers/deque/popleft
 # https://pythontic.com/containers/deque/introduction
+# https://www.geeksforgeeks.org/deque-in-python/
+# https://docs.python.org/3/library/collections.html#collections.deque
