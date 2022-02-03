@@ -1,4 +1,5 @@
 class Queue:
+    # iniciando o projeto, VQV!!
     def __init__(self):
         """Inicialize sua estrutura aqui"""
 
