@@ -13,7 +13,7 @@ class Queue:
         self.queue.append(value)
 
     def dequeue(self):
-        self.queue.popleft()
+        return self.queue.popleft()
 
     def search(self, index):
         if index >= 0:
