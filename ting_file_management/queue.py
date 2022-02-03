@@ -1,15 +1,18 @@
 class Queue:
     def __init__(self):
-        pass
+        self.list_ting = list()
 
     def __len__(self):
-        """Aqui irá sua implementação"""
+        return len(self.list_ting)
 
     def enqueue(self, value):
-        """Aqui irá sua implementação"""
+        self.list_ting.append(value)
 
     def dequeue(self):
-        """Aqui irá sua implementação"""
+        return self.list_ting.pop(0)
 
     def search(self, index):
-        """Aqui irá sua implementação"""
+        if self.__len__() > index and index >= 0:
+            return self.list_ting[index]
+        else:
+            raise IndexError
