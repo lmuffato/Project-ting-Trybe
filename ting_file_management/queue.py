@@ -13,6 +13,6 @@ class Queue:
 
     def search(self, index):
         if len(self) < abs(index) + 1:
-          raise IndexError()
+            raise IndexError()
 
         return self.data[index]
