@@ -13,5 +13,5 @@ class Queue:
 
     def search(self, index):
         if self.__len__() - 1 < index or index < 0:
-          raise IndexError
+            raise IndexError
         return self.queue[index]
