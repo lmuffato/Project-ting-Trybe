@@ -6,10 +6,13 @@ class Queue:
         return len(self.files)
 
     def enqueue(self, value):
-        """Aqui irá sua implementação"""
+        self.files.append(value)
 
     def dequeue(self):
-        """Aqui irá sua implementação"""
+        return self.files.pop(0)
 
     def search(self, index):
-        """Aqui irá sua implementação"""
+        if index < 0 or index > self.__len__():
+            raise IndexError
+
+        return self.files[index]
