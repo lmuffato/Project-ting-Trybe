@@ -1,9 +1,9 @@
 class Queue:
     def __init__(self):
-        """Iniciando o projeto"""
+        self._data = list()
 
     def __len__(self):
-        """Aqui irá sua implementação"""
+        return len(self._data)
 
     def enqueue(self, value):
         """Aqui irá sua implementação"""
