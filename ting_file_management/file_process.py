@@ -3,6 +3,10 @@ from ting_file_management.file_management import txt_importer
 
 
 def process(path_file, instance):
+    queue = instance.get()
+    for item in queue:
+        if item['nome_do_arquivo'] == path_file:
+            return
     content = txt_importer(path_file)
     new_dict = {
         'nome_do_arquivo': path_file,
