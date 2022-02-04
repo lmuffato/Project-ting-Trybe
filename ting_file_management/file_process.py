@@ -1,9 +1,11 @@
-# from ting_file_management.queue import Queue
 import sys
 from ting_file_management.file_management import txt_importer
 
 
 def process(path_file, instance):
+    for data in range(instance.__len__()):
+        if instance.search(data)['nome_do_arquivo'] == path_file:
+            return None
     file = txt_importer(path_file)
     data = {
         'nome_do_arquivo': path_file,
@@ -24,9 +26,8 @@ def remove(instance):
 
 
 def file_metadata(instance, position):
-    data = instance.search(position)
-    print(data, file=sys.stdout)
-
-# project = Queue()
-# process('statics/arquivo_teste.txt', project)
-# process('statics/arquivo_teste.txt', project)
+    try:
+        data = instance.search(position)
+        print(data, file=sys.stdout)
+    except IndexError:
+        print('Posição inválida', file=sys.stderr)
