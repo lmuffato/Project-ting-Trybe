@@ -1,5 +1,30 @@
+from ting_file_management.file_management import txt_importer
+import sys
+
+
+# Informado no plantão que o parâmetro "instance"
+# recebe as funcionalidades de Queue
+
 def process(path_file, instance):
-    """Aqui irá sua implementação"""
+    # Verificação para ignorar arquivos com o mesmo nome
+    for index in range(len(instance)):
+        if instance.search(index)['nome_do_arquivo'] == path_file:
+            return None
+
+    # Validações e leitura do TXT baseado na função "txt_importer"
+    importar_txt = txt_importer(path_file)
+
+    # Formata as informaçõe de acordo com o Readme
+    txt_processado = {
+        'nome_do_arquivo': path_file,
+        'qtd_linhas': len(importar_txt),
+        'linhas_do_arquivo': importar_txt
+    }
+
+    # Coloca a nova instância (Arquivo processado) na fila
+    instance.enqueue(txt_processado)
+    # Reademe pede que cada saída seja enviada pelo stdout
+    sys.stdout.write(str(txt_processado))
 
 
 def remove(instance):
