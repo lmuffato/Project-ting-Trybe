@@ -1,4 +1,5 @@
 class Queue:
+    # GO!
     def __init__(self):
         """Inicialize sua estrutura aqui"""
 
