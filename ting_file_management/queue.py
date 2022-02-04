@@ -17,7 +17,7 @@ class Queue:
             self.data = self.data + auxiliary_list
 
     def dequeue(self):
-        if self.data is empty():
+        if len(self.data) == 0:
             return None
         value = self.data[0]
         del self.data[0]
