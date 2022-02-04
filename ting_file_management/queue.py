@@ -1,3 +1,5 @@
+# Ref: https://github.dev/tryber/sd-10a-live-lectures/tree/Aula37.2
+
 class Queue:
     def __init__(self):
         # """Inicialize sua estrutura aqui"""
