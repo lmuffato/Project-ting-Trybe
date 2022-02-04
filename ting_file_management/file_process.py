@@ -1,4 +1,5 @@
 from ting_file_management import file_management
+import sys
 
 
 def exists_data(instance):
@@ -26,4 +27,7 @@ def remove(instance):
 
 
 def file_metadata(instance, position):
-    pass
+    try:
+        print(instance.search(position))
+    except IndexError:
+        sys.stderr.write('Posição inválida')
