@@ -16,7 +16,9 @@ def process(path_file, instance):
         }
 
         instance.enqueue(file)
+        # https://stackoverflow.com/questions/3263672/the-difference-between-sys-stdout-write-and-print
         sys.stdout.write(str(file) + '\n')
+        # ---------------------------------------------------------------------------------------------
 
     if length:
         search = instance.search(length)
@@ -34,8 +36,16 @@ def process(path_file, instance):
 
 
 def remove(instance):
-    """Aqui irá sua implementação"""
+    length = len(instance)
 
+    if length == 0:
+        sys.stdout.write(str("Não há elementos" + '\n'))
+    if length:
+        name_text_delete = instance.dequeue()["nome_do_arquivo"]
+        message = f"Arquivo {name_text_delete} removido com sucesso"
+
+        sys.stdout.write(str( message + '\n'))
+    
 
 def file_metadata(instance, position):
     """Aqui irá sua implementação"""
@@ -47,5 +57,6 @@ def file_metadata(instance, position):
 
 # process(pathOne, fila)
 # process(pathOne, fila)
-# print(process(pathTwo, fila))
+# process(pathTwo, fila)
+# remove(fila)
 # print(len(fila))
