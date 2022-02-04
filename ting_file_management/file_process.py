@@ -1,4 +1,5 @@
 # from ting_file_management.queue import Queue
+import sys
 from ting_file_management.file_management import txt_importer
 
 
@@ -9,15 +10,19 @@ def process(path_file, instance):
         'qtd_linhas': len(file),
         'linhas_do_arquivo': file
     }
-    print(data)
+    instance.enqueue(data)
+    print(data, file=sys.stdout)
 
 
 def remove(instance):
-    """Aqui irá sua implementação"""
+    file = instance.dequeue()
+    path_file = file['nome_do_arquivo']
+    print(f'Arquivo {path_file} removido com sucesso\n', file=sys.stdout)
 
 
 def file_metadata(instance, position):
     """Aqui irá sua implementação"""
 
 # project = Queue()
+# process('statics/arquivo_teste.txt', project)
 # process('statics/arquivo_teste.txt', project)
