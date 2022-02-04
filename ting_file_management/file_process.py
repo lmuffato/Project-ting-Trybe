@@ -44,8 +44,8 @@ def remove(instance):
         name_text_delete = instance.dequeue()["nome_do_arquivo"]
         message = f"Arquivo {name_text_delete} removido com sucesso"
 
-        sys.stdout.write(str( message + '\n'))
-    
+        sys.stdout.write(str(message + '\n'))
+
 
 def file_metadata(instance, position):
     """Aqui irá sua implementação"""
