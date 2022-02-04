@@ -15,4 +15,11 @@ class Queue:
         return queue_list_item
 
     def search(self, index):
-        """Aqui irá sua implementação"""
+        queue_len = len(self)
+
+        if not 0 <= index <= (queue_len - 1):
+            raise IndexError
+
+        queue_list_item = self._data[index]
+
+        return queue_list_item
