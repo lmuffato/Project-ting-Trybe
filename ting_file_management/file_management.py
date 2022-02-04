@@ -4,6 +4,9 @@ import sys
 def txt_importer(path_file):
     content_file = []
 
+    if not path_file.endswith('.txt'):
+        sys.stderr.write('Formato inválido\n')
+
     try:
         with open(path_file, mode="r") as file:
             text_content = [line.rstrip('\n') for line in file]
