@@ -15,9 +15,12 @@ def process(path_file, instance):
 
 
 def remove(instance):
-    data = instance.dequeue()
-    path_file = data['nome_do_arquivo']
-    print(f'Arquivo {path_file} removido com sucesso\n', file=sys.stdout)
+    try:
+        data = instance.dequeue()
+        path_file = data['nome_do_arquivo']
+        print(f'Arquivo {path_file} removido com sucesso\n', file=sys.stdout)
+    except Exception:
+        print('Não há elementos', file=sys.stdout)
 
 
 def file_metadata(instance, position):
