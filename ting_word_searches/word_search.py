@@ -1,5 +1,6 @@
 def exists_word(word, instance):
     occurences = list()
+    print(instance.get())
     for file in instance.get():
         matches = list()
         for index, line in enumerate(file['linhas_do_arquivo']):
@@ -8,7 +9,7 @@ def exists_word(word, instance):
         if len(matches) > 0:
             occurence = {
                 'palavra': word,
-                'arquivo': file,
+                'arquivo': file['nome_do_arquivo'],
                 'ocorrencias': matches
             }
             occurences.append(occurence)
