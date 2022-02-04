@@ -6,10 +6,13 @@ class Queue:
         return len(self._data)
 
     def enqueue(self, value):
-        """Aqui irá sua implementação"""
+        self._data.append(value)
 
     def dequeue(self):
-        """Aqui irá sua implementação"""
+        queue_list_item = self._data[0]
+        del self._data[0]
+
+        return queue_list_item
 
     def search(self, index):
         """Aqui irá sua implementação"""
