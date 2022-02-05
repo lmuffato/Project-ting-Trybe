@@ -1,23 +1,25 @@
-from ting_file_management.file_management import txt_importer
 
-
-def exists_word(word, instance):
-    data = instance.search(0)
-    text_file = txt_importer(instance.search(0))
-    occur = []
-    answer = [
-        {
-            "palavra": f"{word}",
-            "arquivo": f"{data}",
-            "ocorrencias": occur,
+def exists_word(word: str, instance):
+    words = list()
+    for file in instance.data:
+        data = {
+            "palavra": word,
+            "arquivo": file["nome_do_arquivo"],
+            "ocorrencias": []
         }
-    ]
-    for index, row in enumerate(text_file):
-        if word in row:
-            occur.append({"linha": int(f"{index  + 1}")})
-        if occur:
-            return answer
-    return []
+        words.append(data)
+        # https://book.pythontips.com/en/latest/enumerate.html
+        for index, line in enumerate(file["linhas_do_arquivo"]):
+            current_line = index + 1
+            word_lowercase = word.casefold()
+            line_lowercase = line.casefold()
+            if word_lowercase in line_lowercase:
+                words[index]["ocorrencias"].append({
+                    "linha": current_line
+                })
+                if len(words[index]["ocorrencias"]) > 0:
+                    return words
+        return list()
 
 
 def search_by_word(word, instance):
