@@ -10,15 +10,20 @@ def process(path_file, instance):
         "linhas_do_arquivo": text_content
     }
 
-    if len(instance) > 0 and instance.search(0) == text_content:
+    if len(instance) > 0 and instance.search(0) == output:
         return print(output)
 
-    instance.enqueue(text_content)
+    instance.enqueue(output)
     print(output)
 
 
 def remove(instance):
-    """Aqui irá sua implementação"""
+    if len(instance) == 0:
+        return print("Não há elementos")
+
+    removed_file = instance.dequeue()
+    file_name = removed_file["nome_do_arquivo"]
+    print(f"Arquivo {file_name} removido com sucesso\n")
 
 
 def file_metadata(instance, position):
