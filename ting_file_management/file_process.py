@@ -44,4 +44,12 @@ def remove(instance):
 
 
 def file_metadata(instance, position):
-    """Aqui irá sua implementação"""
+    try:
+        # Busca pelo index do arquivo e exibe como string
+        busca_txt = instance.search(position)
+        return sys.stdout.write(str(busca_txt))
+    # Referência sobre o IndexError: https://docs.python.org/3/library/
+    # exceptions.html?highlight=indexerror#IndexError
+    except IndexError:
+        # Abaixo não precisa do "str" (Linha 50).A mensagem já é uma string.
+        print('Posição inválida', file=sys.stderr)
