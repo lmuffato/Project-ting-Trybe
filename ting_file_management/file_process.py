@@ -2,6 +2,9 @@ from ting_file_management.file_management import txt_importer
 import sys
 
 
+# Referência: Imprimir para stderr em Python
+# https://www.delftstack.com/pt/howto/python/python-print-to-stderr
+
 # Informado no plantão que o parâmetro "instance"
 # recebe as funcionalidades de Queue
 
@@ -52,4 +55,4 @@ def file_metadata(instance, position):
     # exceptions.html?highlight=indexerror#IndexError
     except IndexError:
         # Abaixo não precisa do "str" (Linha 50).A mensagem já é uma string.
-        print('Posição inválida', file=sys.stderr)
+        print("Posição inválida", file=sys.stderr)
