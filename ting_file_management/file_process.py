@@ -54,5 +54,5 @@ def file_metadata(instance, position):
     # Referência sobre o IndexError: https://docs.python.org/3/library/
     # exceptions.html?highlight=indexerror#IndexError
     except IndexError:
-        # Abaixo não precisa do "str" (Linha 50).A mensagem já é uma string.
+        # Abaixo não precisa do "str" (Linha 53).A mensagem já é uma string.
         print("Posição inválida", file=sys.stderr)
