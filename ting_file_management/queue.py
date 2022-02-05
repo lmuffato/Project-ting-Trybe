@@ -3,6 +3,8 @@ class Node:
         self.value = value
         self.next = None
 
+# Referência: Bloco 37 - Estruturas de Dados II - Nó e Listas Encadeadas
+
 
 class Queue:
     def __init__(self):
@@ -54,3 +56,4 @@ class Queue:
             if value_to_be_returned:
                 value_returned = Node(value_to_be_returned.value)
         return value_returned.value
+# ----------------------------------------------------------------------
