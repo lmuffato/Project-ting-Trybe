@@ -13,3 +13,6 @@ def txt_importer(path_file):
             return answer
     except FileNotFoundError:
         sys.stderr.write(f"Arquivo {path_file} não encontrado\n")
+
+
+print(txt_importer('statics/arquivo_teste.txt'))
