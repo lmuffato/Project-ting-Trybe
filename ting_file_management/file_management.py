@@ -9,10 +9,15 @@ def validations(path_file):
     return False
 
 
+# pesquisa sobre leitura de arquivo txt em:
+# https://www.kite.com/python/answers/how-to-read-a-newline-delimited-text-file-in-python
 def txt_importer(path_file):
     if not validations(path_file):
         try:
-            data = open(path_file, "r")
-            print(data)
+            data = open(path_file)
+            final_list = data.read()
+
+            return final_list.splitlines()
+
         except FileNotFoundError:
             sys.stderr.write(f"Arquivo {path_file} não encontrado\n")
