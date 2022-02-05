@@ -10,8 +10,15 @@ def process(path_file, instance):
         'qtd_linhas': lines_qty,
         'linhas_do_arquivo': file_content
     }
-    instance.enqueue(result)
-    print(result, file=sys.stdout)
+
+    exists = False
+    for index in range(instance.__len__()):
+        if instance.search(index)['nome_do_arquivo'] == path_file:
+            exists = True
+
+    if not exists:
+        instance.enqueue(result)
+        print(result, file=sys.stdout)
 
 
 def remove(instance):
