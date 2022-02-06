@@ -1,6 +1,7 @@
 import sys
 from ting_file_management.file_management import txt_importer
 
+
 def process(path_file, instance):
     for index in range(len(instance)):
         if instance.search(index)["nome_do_arquivo"] == path_file:
@@ -22,7 +23,7 @@ def remove(instance):
         removed_pop = instance.dequeue()["nome_do_arquivo"]
         sys.stdout.write(f"Arquivo {removed_pop} removido com sucesso\n")
     except NotImplementedError:
-        raise 
+        raise
 
 
 def file_metadata(instance, position):
