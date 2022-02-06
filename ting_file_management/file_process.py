@@ -27,7 +27,11 @@ def remove(instance):
 
 
 def file_metadata(instance, position):
-    """Aqui irá sua implementação"""
+    try:
+        item = instance.search(position)
+        sys.stdout.write(str(item))
+    except IndexError:
+        sys.stderr.write("Posição inválida\n")
 
 
 Queue = Queue()
