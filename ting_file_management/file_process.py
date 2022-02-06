@@ -16,6 +16,8 @@ def process(path_file, instance):
     instance.enqueue(dados)
     sys.stdout.write(str(dados))
 
+    # requisitos feitos em consulta ao PR #02 da Marilia
+
 
 def remove(instance):
     if instance.__len__() == 0:
@@ -29,4 +31,8 @@ def remove(instance):
 
 
 def file_metadata(instance, position):
-    """Aqui irá sua implementação"""
+    try:
+        data = instance.search(position)
+        sys.stdout.write(str(data))
+    except IndexError:
+        sys.stderr.write("Posição inválida")
