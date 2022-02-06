@@ -16,4 +16,4 @@ class Queue:
             raise IndexError
         return self.items[index]
 
-# requisito feito com https://www.geeksforgeeks.org/stack-in-python/ 
+# requisito feito com https://www.geeksforgeeks.org/stack-in-python/
