@@ -2,6 +2,9 @@ from .queue import Queue
 from .file_management import txt_importer
 
 
+import sys
+
+
 def process(path_file, instance):
     file_content = txt_importer(path_file)
     json = {
@@ -25,4 +28,8 @@ def remove(instance):
 
 
 def file_metadata(instance, position):
-    """Aqui irá sua implementação"""
+    try:
+        file_content = Queue.search(instance, position)
+        return print(file_content)
+    except IndexError:
+        return sys.stderr.write("Posição inválida")
