@@ -1,2 +1,4 @@
 def txt_importer(path_file):
-    """Aqui irá sua implementação"""
+    with open(path_file, 'r') as file:
+        text_list = file.read().splitlines()
+    return text_list
