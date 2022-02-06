@@ -1,12 +1,12 @@
 class Queue:
     def __init__(self):
-        """Inicialize sua estrutura aqui - iniciando o projeto """
+        self.queue = []
 
     def __len__(self):
-        """Aqui irá sua implementação"""
+        return len(self.queue)
 
     def enqueue(self, value):
-        """Aqui irá sua implementação"""
+        return self.queue.append(value)
 
     def dequeue(self):
         """Aqui irá sua implementação"""
