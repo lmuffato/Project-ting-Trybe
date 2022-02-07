@@ -14,4 +14,7 @@ class Queue:
         return current_out
 
     def search(self, index):
-        """Aqui irá sua implementação"""
+        # por que o method self.__len__ não funciona nesse caso?
+        if index >= len(self.queue) or index < 0:
+            raise IndexError
+        return self.queue[index]
