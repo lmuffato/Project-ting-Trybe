@@ -9,7 +9,9 @@ class Queue:
         self.queue.append(value)
 
     def dequeue(self):
+        current_out = self.queue[0]
         self.queue.pop(0)
+        return current_out
 
     def search(self, index):
         """Aqui irá sua implementação"""
