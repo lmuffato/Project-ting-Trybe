@@ -18,6 +18,5 @@ def exists_word_in_msg(word, line):
     """
     match_obj = re.search(r'{word}\s'.format(word=word), line, re.IGNORECASE)
     if match_obj is None:
-        print("deu ruim")
         return False
     return True
