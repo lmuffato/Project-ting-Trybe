@@ -1,0 +1,28 @@
+"Acabou, acabou! É tetra, é tetra!"
+
+-- Galvão Bueno
+
+Vídeo: https://www.youtube.com/watch?v=ZwRHIGusjQU
+
+https://pt.wikipedia.org/wiki/Copa_do_Mundo_FIFA_de_1994
+
+
+a_special_thanks_to_in_cs_module = [
+  'Cristiano Benites',
+  'Maria Carolina',
+  'Carlos Júnior',
+  'Carlos Melo',
+  'Tulio Olivieri'
+]
+
+Obrigado :brasil: :portugal:
+Gracias :espanha:
+Thank You :estados_unidos: :grã-bretanha:
+Merci :frança:
+Danke :alemanha:
+Grazie Mille :itália:
+Xiè Xiè :china:
+Arigatō :jp:
+Gomawo :coreia_do_sul:
+Spasibo :rússia:
+Shukran :territórios_palestinos: :egito: :síria:
