@@ -14,6 +14,9 @@ def txt_importer(path_file):
 
     try:
         file_to_read = open(path_file, "r").read()
+        print(file_to_read.split("\n"))
         return file_to_read.split("\n")
     except FileNotFoundError:
         sys.stderr.write(f"Arquivo {path_file} não encontrado\n")
+
+txt_importer("statics/nome_pedro.txt")
