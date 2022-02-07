@@ -1,11 +1,12 @@
-from ting_file_management.util import get_files_name
-
 class Queue:
     def __init__(self):
         self.queue = []
 
     def __len__(self):
         return len(self.queue)
+
+    def __queue__(self):
+        return self.queue
 
     def enqueue(self, value):
         self.queue.append(value)
@@ -20,9 +21,3 @@ class Queue:
         if index >= len(self.queue) or index < 0:
             raise IndexError
         return self.queue[index]
-
-queue = Queue()
-queue.enqueue(12)
-queue.enqueue("oi")
-queue.enqueue("hey")
-get_files_name(queue)
