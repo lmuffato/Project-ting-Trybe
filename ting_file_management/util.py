@@ -18,25 +18,31 @@ def exists_word_in_line(word, line):
     """
     match_obj = re.search(r'{word}'.format(word=word), line, re.IGNORECASE)
     if match_obj is None:
-        print("deu ruim")
-        return False
-    return True
+        return {"has": False, "line": ""}
+    return {"has": True, "line": match_obj.string}
 
 
-def exists_word_in_msg(word, lines_msg):
+def exists_word_in_msg(word, lines_msg, return_line=False):
     exists_in_line = []
     for line in lines_msg:
-        if exists_word_in_line(word, line):
+        verify = exists_word_in_line(word, line)
+        if verify["has"] and return_line:
+            exists_in_line.append({
+                "linha": lines_msg.index(line) + 1,
+                "conteudo": verify["line"]
+            })
+        if verify["has"] and not return_line:
             exists_in_line.append({"linha": lines_msg.index(line) + 1})
     return exists_in_line
 
 
-def exists_word_dto(word, msg):
+def exists_word_dto(word, msg, return_line=False):
     dto = None
     if len(exists_word_in_msg(word, msg["linhas_do_arquivo"])) > 0:
+        lines = msg["linhas_do_arquivo"]
         dto = {
             "palavra": word,
             "arquivo": msg["nome_do_arquivo"],
-            "ocorrencias": exists_word_in_msg(word, msg["linhas_do_arquivo"])
+            "ocorrencias": exists_word_in_msg(word, lines, return_line)
         }
     return dto

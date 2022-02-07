@@ -11,4 +11,9 @@ def exists_word(word, instance):
 
 
 def search_by_word(word, instance):
-    """Aqui irá sua implementação"""
+    return_list = []
+    curr_queue = instance.__queue__()
+    for msg in curr_queue:
+        if exists_word_dto(word, msg) is not None:
+            return_list.append(exists_word_dto(word, msg, True))
+    return return_list
