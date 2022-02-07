@@ -1,4 +1,3 @@
-import sys
 from ting_file_management.file_management import txt_importer
 
 
@@ -19,6 +18,7 @@ def process(path_file, instance):
     except IndexError:
         instance.enqueue(output)
         print(output)
+
 
 def remove(instance):
     """Aqui irá sua implementação"""
