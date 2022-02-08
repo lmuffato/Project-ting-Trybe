@@ -3,7 +3,7 @@ from xml.dom import NotFoundErr
 
 
 def txt_importer(path_file):
-    if not path_file.endswith('txt'):
+    if not path_file.endswith('.txt'):
         sys.stderr.write("Formato inválido\n")
 
     try:
