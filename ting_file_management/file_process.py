@@ -3,20 +3,21 @@ from file_management import txt_importer
 from queue import Queue
 
 def process(path_file, instance):
+    file_name = path_file.split("/")[-1]
+
+    for i, _ in enumerate(instance):
+        if instance.search(i)["nome_do_arquivo"] == file_name:
+            return None
+
     array_file = txt_importer(path_file)
-    for item in array_file:
-        instance.enqueue(item)
-    
-    return {
-        "nome_do_arquivo": path_file.split("/")[-1],
-        "qtd_linhas": len(instance),
+
+    data = {
+        "nome_do_arquivo": file_name,
+        "qtd_linhas": len(array_file),
         "linhas_do_arquivo": array_file,
     }
 
-""" queue = Queue()
-x = process("dev-requirements.txt", queue)
-print(x) """
-
+    instance.enqueue(data)
 
 
 def remove(instance):
