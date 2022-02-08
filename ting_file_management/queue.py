@@ -14,11 +14,10 @@ class Queue:
         return None
 
     def search(self, index):
+        if index < 0:
+            raise IndexError
+
         try:
             return self._data[index]
         except IndexError:
             raise IndexError
-
-""" queue = Queue()
-print(queue.search(1)) """
-
