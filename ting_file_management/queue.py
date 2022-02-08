@@ -1,6 +1,6 @@
 class Queue:
     def __init__(self):
-        """Inicialize sua estrutura aqui"""
+        self._data = list()
 
     def __len__(self):
         """Aqui irá sua implementação"""
