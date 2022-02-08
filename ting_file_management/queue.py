@@ -9,9 +9,9 @@ class Queue:
         self.data.append(value)
 
     def dequeue(self):
-        return self._data.pop(0)
+        return self.data.pop(0)
 
     def search(self, index):
         if index < 0:
             raise IndexError
-        return self._data[index]
+        return self.data[index]
