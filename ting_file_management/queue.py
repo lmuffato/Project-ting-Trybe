@@ -9,7 +9,7 @@ class Queue:
         self.files.append(value)
 
     def dequeue(self):
-        return self.files.pop()
+        return self.files.pop(0)
 
     def search(self, index):
         if index < 0 or index > self.__len__():

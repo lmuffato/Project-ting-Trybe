@@ -2,15 +2,21 @@ from .file_management import txt_importer
 import sys
 
 
+def list_pathern(path, data):
+    result = {
+        "nome_do_arquivo": path,
+        "qtd_linhas": len(data),
+        "linhas_do_arquivo": data,
+    }
+
+    return result
+
+
 def process(path_file, instance):
 
     data = txt_importer(path_file)
 
-    result = {
-        "nome_do_arquivo": path_file,
-        "qtd_linhas": len(data),
-        "linhas_do_arquivo": data,
-    }
+    result = list_pathern(path_file, data)
 
     instance.enqueue(result)
 
@@ -28,4 +34,7 @@ def remove(instance):
 
 
 def file_metadata(instance, position):
-    """Aqui irá sua implementação"""
+    if position > instance.__len__():
+        return sys.stderr.write("Posição inválida")
+    else:
+        return sys.stdout.write(f"{instance.search(position)}")
