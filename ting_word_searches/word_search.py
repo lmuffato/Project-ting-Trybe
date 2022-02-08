@@ -8,7 +8,6 @@ def exists_word(word, instance):
             'arquivo': data['nome_do_arquivo'],
             'ocorrencias': possible
         })
-        
         for index, line in enumerate(data['linhas_do_arquivo']):
             if word in line:
                 possible.append({'linha': index + 1})
@@ -16,7 +15,6 @@ def exists_word(word, instance):
             result.pop()
 
     return result
-
 
 
 def search_by_word(word, instance):
