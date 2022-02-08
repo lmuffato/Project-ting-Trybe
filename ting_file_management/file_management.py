@@ -8,10 +8,12 @@ import sys
 def txt_importer(path_file):
     """Aqui irá sua implementação"""
     if not path_file.endswith(".txt"):
-        # O método sys.stderr.write()imprime a mensagem como o parâmetro dado ao método stderr
+        # O método sys.stderr.write()imprime a mensagem como o parâmetro dado
+        # ao método stderr
         return sys.stderr.write("Formato inválido\n")
     try:
-        # O splitlines()método divide uma string em uma lista. A divisão é feita em quebras de linha.
+        # O splitlines()método divide uma string em uma lista. A divisão é
+        # feita em quebras de linha.
         with open(path_file, "r") as data:
             return data.read().splitlines()
     except FileNotFoundError:
