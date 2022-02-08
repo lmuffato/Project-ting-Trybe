@@ -2,7 +2,6 @@ import sys
 from .file_management import txt_importer
 
 
-
 def process(path_file, instance):
     if any(file['nome_do_arquivo'] == path_file for file in instance.data):
         return None
