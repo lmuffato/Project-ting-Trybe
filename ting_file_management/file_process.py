@@ -11,7 +11,7 @@ def process(path_file, instance):
     obj = {
         "nome_do_arquivo": path_file,
         "qtd_linhas": len(data),
-        "linhas do arquivo": data
+        "linhas_do_arquivo": data
     }
     instance.enqueue(obj)
     sys.stdout.write(str(obj))
