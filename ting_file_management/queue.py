@@ -9,10 +9,11 @@ class Queue:
 
     def enqueue(self, value):
         """Aqui irá sua implementação"""
-        self.values.append(value)
+        return self.values.append(value)
 
     def dequeue(self):
         """Aqui irá sua implementação"""
+        return self.values.pop(0)
 
     def search(self, index):
         """Aqui irá sua implementação"""
