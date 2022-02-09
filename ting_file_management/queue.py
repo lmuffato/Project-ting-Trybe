@@ -9,6 +9,7 @@ class Queue:
 
     def enqueue(self, value):
         """Aqui irá sua implementação"""
+        self.values.append(value)
 
     def dequeue(self):
         """Aqui irá sua implementação"""
