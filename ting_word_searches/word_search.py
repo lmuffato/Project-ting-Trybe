@@ -1,6 +1,3 @@
-from re import search
-
-
 def exists_word(word, instance):
     """Aqui irá sua implementação"""
     for index in range(len(instance)):
