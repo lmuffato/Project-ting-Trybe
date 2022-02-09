@@ -44,6 +44,6 @@ def file_metadata(instance, position):
     # Em caso da posição não existir, deve ser exibida uma mensagem de erro:
     # "Posição inválida" na stderr.
     try:
-        instance.search(position)
+        return sys.stdout.write(f"{instance.search(position)}")
     except IndexError:
         return sys.stderr.write('Posição inválida\n')
