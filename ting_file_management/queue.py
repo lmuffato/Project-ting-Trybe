@@ -1,3 +1,6 @@
+from ctypes import resize
+
+
 class Queue:
     def __init__(self):
         """Inicialize sua estrutura aqui."""
@@ -17,4 +20,6 @@ class Queue:
 
     def search(self, index):
         """Aqui irá sua implementação"""
+        if len(self.values) < 0:
+            raise IndexError
         return self.values[index]
