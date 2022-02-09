@@ -2,15 +2,18 @@ import re
 
 
 def return_list_pathern(word, file_name, found):
-    result = [
-        {
-            "palavra": word,
-            "arquivo": file_name,
-            "ocorrencias": found,
-        }
-    ]
+    if found == []:
+        return []
+    else:
+        result = [
+            {
+                "palavra": word,
+                "arquivo": file_name,
+                "ocorrencias": found,
+            }
+        ]
 
-    return result
+        return result
 
 
 def find_word(word, data):
