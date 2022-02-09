@@ -12,7 +12,6 @@ class Queue:
         return self.list.pop(0)
 
     def search(self, index):
-        if index >= 0:
-            return self.queue[index]
-        else:
+        if(index < 0 or index > len(self.list)):
             raise IndexError
+        return self.list[index]
