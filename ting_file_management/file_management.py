@@ -2,6 +2,7 @@ from functools import lru_cache
 import sys
 import os.path
 
+
 @lru_cache
 def txt_importer(path_file):
     formatFile = os.path.splitext(path_file)[1]
