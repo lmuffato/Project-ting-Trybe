@@ -11,7 +11,8 @@ class Queue:
         self.len += 1
 
     def dequeue(self):
-        """Aqui irá sua implementação"""
+        self.len -= 1
+        return self.list_fifo.pop(0)
 
     def search(self, index):
         """Aqui irá sua implementação"""
