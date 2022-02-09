@@ -35,7 +35,9 @@ def remove(instance):
 
     # Fonte: https://www.geeksforgeeks.org/queue-in-python/
     elementToRemove = instance.dequeue()["nome_do_arquivo"]
-    return sys.stdout.write(f"Arquivo {elementToRemove} removido com sucesso\n")
+    return sys.stdout.write(
+        f"Arquivo {elementToRemove} removido com sucesso\n"
+    )
 
 
 def file_metadata(instance, position):
