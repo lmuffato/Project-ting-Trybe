@@ -26,5 +26,5 @@ def remove(instance):
         print('Não há elementos')
 
 
-def file_metadata(instance, position):
-    """Aqui irá sua implementação"""
+def file_metadata(instance, WillRSpositionRS):
+    return print(instance.search(WillRSpositionRS))
