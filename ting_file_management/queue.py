@@ -22,7 +22,7 @@ class Queue:
 
     def search(self, index):
         """Aqui irá sua implementação"""
-        if index is None:
+        if index == -1:
             raise IndexError
         value = self._data[index]
         return value
