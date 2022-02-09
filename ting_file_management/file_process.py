@@ -1,3 +1,9 @@
+# https://www.geeksforgeeks.org/sys-stdout-write-in-python
+
+# https://docs.python.org/3/library/
+# exceptions.html?highlight=indexerror#IndexError
+
+
 import sys
 from ting_file_management.file_management import txt_importer
 
@@ -27,3 +33,8 @@ def remove(instance):
 
 def file_metadata(instance, position):
     """Aqui irá sua implementação"""
+    try:
+        search_txt = instance.search(position)
+        return sys.stdout.write(str(search_txt))
+    except IndexError:
+        print("Posição inválida", file=sys.stderr)
