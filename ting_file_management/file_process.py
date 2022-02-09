@@ -41,7 +41,7 @@ def remove(instance):
 
 
 def file_metadata(instance, position):
-    # Em caso da posição não existir, deve ser exibida uma mensagem de erro: 
+    # Em caso da posição não existir, deve ser exibida uma mensagem de erro:
     # "Posição inválida" na stderr.
     try:
         instance.search(position)
