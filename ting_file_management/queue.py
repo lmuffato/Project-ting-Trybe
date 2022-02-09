@@ -17,3 +17,4 @@ class Queue:
 
     def search(self, index):
         """Aqui irá sua implementação"""
+        return self.values[index]
