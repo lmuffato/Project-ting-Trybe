@@ -22,10 +22,14 @@ def remove(instance):
     try:
         obj = instance.dequeue()
         path_file = obj["nome_do_arquivo"]
-        sys.stdout.write(f'Arquivo {path_file} removido com sucesso')
+        sys.stdout.write(f'Arquivo {path_file} removido com sucesso\n')
     except IndexError:
         sys.stderr.write("Não há elementos\n")
 
 
 def file_metadata(instance, position):
     """Aqui irá sua implementação"""
+
+
+# src:
+# https://medium.com/analytics-vidhya/queue-deque-overview-and-its-implementation-in-python-c36c56b532b8
