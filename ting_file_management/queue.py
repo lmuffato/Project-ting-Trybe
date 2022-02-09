@@ -15,4 +15,6 @@ class Queue:
         return self.list_fifo.pop(0)
 
     def search(self, index):
-        """Aqui irá sua implementação"""
+        if(index < 0 or index > self.len):
+            raise IndexError
+        return self.list_fifo[index]
