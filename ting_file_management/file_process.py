@@ -9,7 +9,14 @@ def process(path_file, instance):
     for i in range(len(instance)):
         if instance.search(i)["nome_do_arquivo"] == path_file:
             return None
-   
+    obj = {
+        "nome_do_arquivo": path_file,
+        "qtd_linhas": len(data),
+        "linhas do arquivo": data
+    }
+    instance.enqueue(obj)
+    sys.stdout.write(str(obj))
+
 
 def remove(instance):
     """Aqui irá sua implementação"""
