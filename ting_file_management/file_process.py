@@ -8,6 +8,8 @@ def process(path_file, instance):
         "qtd_linhas": len(txt_importer(path_file)),
         "linhas_do_arquivo": txt_importer(path_file),
     }
+    if response not in instance.fila:
+        instance.enqueue(response)
     sys.stdout.write(str(response))
 
 
