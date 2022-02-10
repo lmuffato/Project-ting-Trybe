@@ -1,5 +1,13 @@
+import sys
+from ting_file_management.file_management import txt_importer
+
 def process(path_file, instance):
-    """Aqui irá sua implementação"""
+    response = {
+        "nome_do_arquivo": path_file,
+        "qtd_linhas": len(txt_importer(path_file)),
+        "linhas_do_arquivo": txt_importer(path_file),
+    }
+    sys.stdout.write(str(response))
 
 
 def remove(instance):
