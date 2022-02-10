@@ -18,7 +18,7 @@ class Queue():
         return self.fila.pop(0)
 
     def search(self, index):
-        pass
+        return self.fila[index]
     
     def show_queue(self):
         aux = self.head_value
@@ -38,9 +38,9 @@ class Queue():
     def is_empty(self):
         return not self.__length
     
-pessoa = (Node('Fernanda'))
-pessoa.next = 'ivan'
-print(pessoa.value)
+# pessoa = (Node('Fernanda'))
+# pessoa.next = 'ivan'
+# print(pessoa.value)
 # joao = Queue()
 # # print(joao.tail_value)
 # joao.enqueue(2)
