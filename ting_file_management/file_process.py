@@ -14,10 +14,10 @@ def process(path_file, instance):
     }
 
     if len(instance) > 0 and instance.search(0) == output_return:
-        return print(output_return, file = stdout)
+        return print(output_return, file=stdout)
 
     instance.enqueue(output_return)
-    print(output_return, file = stdout)
+    print(output_return, file=stdout)
 
 
 def remove(instance):
