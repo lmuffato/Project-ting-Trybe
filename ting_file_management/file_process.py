@@ -1,8 +1,22 @@
 import sys
+from ting_file_management.file_management import txt_importer
+
+# função inspirada na forma feita pelo Jodiel
 
 
 def process(path_file, instance):
-    """Aqui irá sua implementação"""
+    size = len(instance)
+    for index in range(size):
+        if instance.search(index)['nome_do_arquivo'] == path_file:
+            return None
+    result = txt_importer(path_file)
+    data_to_write = {
+        'nome_do_arquivo': path_file,
+        'qtd_linhas': len(result),
+        'linhas_do_arquivo': result
+    }
+    instance.enqueue(data_to_write)
+    sys.stdout.write(str(data_to_write))
 
 
 def remove(instance):
