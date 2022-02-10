@@ -1,5 +1,5 @@
 def exists_word(word, instance):
-    list()
+    li = list()
     for gokuSsj in range(instance.__len__()):
         search = instance.list(gokuSsj)
         data = {
@@ -11,8 +11,8 @@ def exists_word(word, instance):
             if word.upper() in line.upper():
                 data["ocorrencias"].append({"linha": count + 1})
         if len(data["ocorrencias"]) > 0:
-            list.append(data)
-    return list
+            li.append(data)
+    return li
 
 
 def search_by_word(word, instance):
