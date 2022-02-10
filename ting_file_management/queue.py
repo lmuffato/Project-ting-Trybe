@@ -6,10 +6,12 @@ class Node:
 
 class Queue():
     def __init__(self):
-        self.fila = []
+        self.head_value = None
+        self.tail_value = None
+        self.__length = 0
 
     def __len__(self):
-        return len(self.fila)
+        return self.__length
 
     def enqueue(self, value):
         if self.is_empty():
@@ -58,7 +60,7 @@ class Queue():
     
 pessoa = (Node('Fernanda'))
 pessoa.next = 'ivan'
-print(pessoa.next)
+print(pessoa.value)
 # joao = Queue()
 # # print(joao.tail_value)
 # joao.enqueue(2)
