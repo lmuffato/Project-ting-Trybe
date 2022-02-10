@@ -1,15 +1,17 @@
 class Queue:
     def __init__(self):
-        """Inicialize sua estrutura aqui"""
+        self.queueItems = []
 
     def __len__(self):
-        """Aqui irá sua implementação"""
+        return len(self.queueItems)
 
     def enqueue(self, value):
-        """Aqui irá sua implementação"""
+        self.queueItems.append(value)
 
     def dequeue(self):
-        """Aqui irá sua implementação"""
+        self.queueItems.pop(0)
 
     def search(self, index):
-        """Aqui irá sua implementação"""
+        if index < 0:
+            raise IndexError()
+        return self.queueItems[index]
