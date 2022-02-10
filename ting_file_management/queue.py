@@ -21,25 +21,25 @@ class Queue():
         if index >= 0 and self.fila[index]:
             return self.fila[index]
         raise IndexError
-    
+
     def show_queue(self):
         aux = self.head_value
         while aux is not None:
-            print(f' {aux.value} -->',end='')
+            print(f' {aux.value} -->', end='')
             aux = aux.next
         print(None)
-    
+
     def __str__(self):
         aux = self.head_value
-        retorno = '' 
+        retorno = ''
         while aux is not None:
             retorno += f' {aux.value} -->'
             aux = aux.next
         return (retorno + '\n')
-    
+
     def is_empty(self):
         return not self.__length
-    
+
 # pessoa = (Node('Fernanda'))
 # pessoa.next = 'ivan'
 # print(pessoa.value)
