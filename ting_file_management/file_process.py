@@ -1,3 +1,4 @@
+import sys
 from ting_file_management.file_management import txt_importer
 
 
@@ -35,3 +36,8 @@ def remove(instance):
 
 def file_metadata(instance, position):
     """Aqui irá sua implementação"""
+    try:
+        file = instance.search(position)
+        return file
+    except Exception:
+        print("Posição inválida", file=sys.stderr)
