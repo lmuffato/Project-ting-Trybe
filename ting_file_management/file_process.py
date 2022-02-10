@@ -21,7 +21,7 @@ def process(path_file, instance):
 
 def remove(instance):
     if len(instance) < 1:
-        return "Não há elementos"
+        return sys.stdout.write('Não há elementos\n')
     result = instance.dequeue()
     print(f"Arquivo {result['nome_do_arquivo']} removido com sucesso")
 
