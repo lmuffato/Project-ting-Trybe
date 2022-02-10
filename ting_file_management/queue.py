@@ -6,36 +6,16 @@ class Node:
 
 class Queue():
     def __init__(self):
-        self.head_value = None
-        self.tail_value = None
-        self.__length = 0
+        self.fila = []
 
     def __len__(self):
-        return self.__length
+        return len(self.fila)
 
     def enqueue(self, value):
-        if self.is_empty():
-            first_value = Node(value)
-            first_value.next = self.head_value
-            self.__length += 1
-            self.head_value = first_value
-            return
-
-        last_value = Node(value)
-        current_value = self.head_value
-
-        while current_value.next:
-            current_value = current_value.next
-        current_value.next = last_value
-        self.__length += 1
+        return self.fila.append(value)
 
     def dequeue(self):
-        value_to_be_removed = self.head_value
-        if value_to_be_removed:
-            self.head_value = self.head_value.next
-            value_to_be_removed.next = None
-            self.__length -= 1
-        return value_to_be_removed
+        return self.fila.pop(0)
 
     def search(self, index):
         pass
