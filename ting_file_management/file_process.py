@@ -1,6 +1,7 @@
 from ting_file_management.file_management import txt_importer
 import sys
 
+
 def process(path_file, instance):
     text_lines = txt_importer(path_file)
 
@@ -17,7 +18,6 @@ def process(path_file, instance):
     instance.enqueue(file)
 
     print(file)
-
 
 
 def remove(instance):
