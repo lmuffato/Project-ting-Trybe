@@ -1,7 +1,9 @@
 def exists_word(word, instance):
     li = list()
     for gokuSsj in range(instance.__len__()):
-        search = instance.list(gokuSsj)
+        search = instance.search(
+            gokuSsj
+        )  # https://pythonexamples.org/python-re-search/
         data = {
             "palavra": word,
             "arquivo": search["nome_do_arquivo"],
