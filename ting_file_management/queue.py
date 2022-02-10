@@ -6,7 +6,7 @@ class Queue:
         return len(self.storage)
 
     def enqueue(self, value):
-        """Aqui irá sua implementação"""
+        return self.storage.append(value)
 
     def dequeue(self):
         """Aqui irá sua implementação"""
