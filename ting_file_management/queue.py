@@ -18,7 +18,9 @@ class Queue():
         return self.fila.pop(0)
 
     def search(self, index):
-        return self.fila[index]
+        if index >= 0 and self.fila[index]:
+            return self.fila[index]
+        raise IndexError
     
     def show_queue(self):
         aux = self.head_value
