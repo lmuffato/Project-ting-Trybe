@@ -9,7 +9,7 @@ class Queue:
         return self.storage.append(value)
 
     def dequeue(self):
-        """Aqui irá sua implementação"""
+        return self.storage.pop(0)
 
     def search(self, index):
         """Aqui irá sua implementação"""
