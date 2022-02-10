@@ -36,5 +36,5 @@ def search_by_word(word, instance):
         report.append(file_report)
     if not occurrences:
         report = []
-        
+
     return report
