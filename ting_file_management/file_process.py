@@ -12,6 +12,10 @@ def process(path_file, instance):
         "linhas_do_arquivo": info_file
     }
 
+    for index in range(len(instance)):
+        if instance.search(index)["nome_do_arquivo"] == path_file:
+            return None
+
     instance.enqueue(info_return)
     print(info_return, file=sys.stdout)
 
