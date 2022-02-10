@@ -12,8 +12,8 @@ def process(path_file, instance):
         "linhas_do_arquivo": info_file
     }
 
-    for index in range(len(instance)):
-        if instance.search(index)["nome_do_arquivo"] == path_file:
+    for index in instance._data:
+        if index["nome_do_arquivo"] == path_file:
             return None
 
     instance.enqueue(info_return)
@@ -22,6 +22,9 @@ def process(path_file, instance):
 
 def remove(instance):
     """Aqui irá sua implementação"""
+    if not instance._data:
+        print("Não há elementos", file=sys.stdout)
+
 
 
 def file_metadata(instance, position):
