@@ -24,7 +24,14 @@ def remove(instance):
     """Aqui irá sua implementação"""
     if not instance._data:
         print("Não há elementos", file=sys.stdout)
-
+    else:
+        for index in instance._data:
+            instance.dequeue()
+            index_fifo = "nome_do_arquivo"
+            print(
+                f"Arquivo {index[index_fifo]} removido com sucesso",
+                file=sys.stdout
+            )
 
 
 def file_metadata(instance, position):
