@@ -6,7 +6,7 @@ class Queue:
         return len(self._data)
 
     def is_empty(self):
-        return not bool(self.size())
+        return not bool(self.__len__())
 
     def enqueue(self, value):
         self._data.append(value)
