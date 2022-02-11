@@ -17,7 +17,6 @@ def process(path_file, instance):
     return sys.stdout.write(str(doc_data))
 
 
-
 def remove(instance):
     """Aqui irá sua implementação"""
 
