@@ -1,3 +1,4 @@
+# Iniciando o projeto
 class Queue:
     def __init__(self):
         """Inicialize sua estrutura aqui"""
