@@ -1,12 +1,15 @@
 import sys
-import os.path
 
 
 def txt_importer(path_file):
-    if not path_file.endswith('.txt'):
-        return sys.stderr.write('Formato inválido\n')
-    if not os.path.isfile(path_file):
-        return sys.stderr.write(f'Arquivo {path_file} não encontrado\n')
-
-    file_list = open(path_file, 'r').read().splitlines()
-    return file_list
+    if 'txt' in path_file:
+        try:
+            data = open(path_file, 'r')
+            content_list = []
+            for i in data:
+                content_list.append(i.rstrip('\n'))
+            return content_list
+        except FileNotFoundError:
+            print(f'Arquivo {path_file} não encontrado', file=sys.stderr)
+    else:
+        print('Formato inválido', file=sys.stderr)
