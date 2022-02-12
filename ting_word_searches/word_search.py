@@ -1,7 +1,3 @@
-from ting_file_management.file_process import process
-from ting_file_management.queue import Queue
-
-
 def exists_word(word, instance):
     """Aqui irá sua implementação"""
     response = list()
