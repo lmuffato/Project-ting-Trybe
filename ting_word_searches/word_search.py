@@ -45,7 +45,10 @@ def search_by_word(word, instance):
         for line in range(len(search["linhas_do_arquivo"])):
             if word.lower() in search["linhas_do_arquivo"][line].lower():
                 lineIndex += 1
-                searchResult["ocorrencias"].append({"linha": lineIndex, "conteudo": search["linhas_do_arquivo"][line]})
+                searchResult["ocorrencias"].append({
+                    "linha": lineIndex,
+                    "conteudo": search["linhas_do_arquivo"][line]
+                })
             if len(searchResult["ocorrencias"]) > 0:
                 response.append(searchResult)
 
