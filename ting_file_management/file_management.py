@@ -28,4 +28,4 @@ def txt_importer(path_file):
             sys.stderr.write("Formato inválido\n")
 
     else:
-        print(f"Arquivo não encontrado")
+        print("Arquivo não encontrado")
