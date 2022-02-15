@@ -27,7 +27,9 @@ def remove(instance):
     if not len(instance):
         print("Não há elementos", file=sys.stdout)
     else:
-        pass
+        path_file = instance.search(0)["nome_do_arquivo"]
+        print(f"Arquivo {path_file} removido com sucesso", file=sys.stdout)
+        instance.dequeue
 
 
 def file_metadata(instance, position):
