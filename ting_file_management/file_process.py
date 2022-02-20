@@ -30,4 +30,8 @@ def remove(instance):
 
 
 def file_metadata(instance, position):
-    """Aqui irá sua implementação"""
+    try:
+        file = instance.search(position)
+        print(file, file=sys.stdout)
+    except IndexError:
+        print('Posição inválida', file=sys.stderr)
