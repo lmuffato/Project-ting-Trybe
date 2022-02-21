@@ -80,6 +80,6 @@ def search_by_word(word, instance):
 # project = Queue()
 # process("statics/nome_pedro.txt", project)
 # print(search_by_word("pedro", project))
-    
+
 # teste automatizado
 # python3 -m pytest tests/test_word_search.py
