@@ -27,6 +27,7 @@ def process(path_file, instance):
 # project = Queue()
 # print(process("statics/arquivo_teste.txt", project))
 
+
 def remove(instance):
     # se não existir instância de queue ou se o
     # comprimento do objeto for igual a 0
@@ -46,6 +47,7 @@ def remove(instance):
 # process("statics/arquivo_teste.txt", project)
 # remove(project)  # Arquivo statics/arquivo_teste.txt removido com sucesso
 # remove(project)  # Não há elementos
+
 
 def file_metadata(instance, position):
     try:
