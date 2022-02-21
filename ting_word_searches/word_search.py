@@ -36,7 +36,26 @@ def exists_word(word, instance):
 
 
 def search_by_word(word, instance):
-    """Aqui irá sua implementação"""
+    occurrences = []
+    for element in instance._data:
+        ocorrence_info = {
+            'palavra': word,
+            'arquivo': element['nome_do_arquivo'],
+            'ocorrencias': []
+        }
+
+        for index, line in enumerate(element['linhas_do_arquivo']):
+            line_minus_period = line.replace('.', '')
+            if word.lower() in line_minus_period.lower().split():
+                ocorrence_info['ocorrencias'].append({
+                    'linha': index + 1,
+                    'conteudo': line
+                })
+
+        if len(ocorrence_info['ocorrencias']) > 0:
+            occurrences.append(ocorrence_info)
+
+    return occurrences
 
 
 # teste automatizado
