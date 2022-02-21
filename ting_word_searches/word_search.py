@@ -12,8 +12,8 @@ def exists_word(word, instance):
         })
         # Para cada índice e linha na lista criada pelo enumerate
         for index, line in enumerate(element['linhas_do_arquivo']):
-        # A função enumerate cria uma lista de classe a partir de um
-        # índice 0 ou determinado no segundo parâmetro opcional
+            # A função enumerate cria uma lista de classe a partir de
+            # um índice 0 ou determinado no segundo parâmetro opcional
             if word in line:  # se existir a palavra na linha
                 # adiciona no array
                 occurrences_lines.append({
