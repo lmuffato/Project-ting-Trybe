@@ -1,30 +1,34 @@
 def exists_word(word, instance):
-    # array de ocorrências
-    occurrences = []
-    # para cada elemento na lista
-    for element in instance.list:
-        occurrences_lines = []  # linhas da ocorrência
-        # informações da ocorrência
-        occurrences.append({
-            'palavra': word,
-            'arquivo': element['nome_do_arquivo'],
-            'ocorrencias': occurrences_lines
-        })
-        # Para cada índice e linha na lista criada pelo enumerate
-        for index, line in enumerate(element['linhas_do_arquivo']):
-            # A função enumerate cria uma lista de classe a partir de
-            # um índice 0 ou determinado no segundo parâmetro opcional
-            if word in line:  # se existir a palavra na linha
-                # adiciona no array
-                occurrences_lines.append({
-                    'linha': index + 1
-                })
-        # se não tiver ocorrências
-        if len(occurrences_lines) == 0:
-            # remove e retorna o primeiro elemento da fila
-            occurrences.pop()
+    # Para cada elemento da lista
+    for index in range(len(instance)):
+        # elemento buscado pelo indice
+        file = instance.search(index)
+        # informações da pesquisa
+        data_info = {
+            "palavra": word,
+            "arquivo": file["nome_do_arquivo"],
+            "ocorrencias": [],
+        }
+        # linha de ocorrência
+        linha = 0
 
-    return occurrences
+        # Para cada elemento no conjunto de linhas
+        for index in file["linhas_do_arquivo"]:
+            # buscar a palavra em caixa baixa, no texto em caixa baixa
+            if word.lower() in index.lower():
+                linha += 1
+                # adiciona no array de ocorrências
+                data_info["ocorrencias"].append(
+                  {
+                    "linha": linha
+                  }
+                )
+
+        search_info = []
+        # se exisitir ocorrênica, adicionar ao array
+        if len(data_info["ocorrencias"]) > 0:
+            search_info.append(data_info)
+    return search_info
 
 
 # TESTE MANUAL
@@ -36,27 +40,46 @@ def exists_word(word, instance):
 
 
 def search_by_word(word, instance):
-    occurrences = []
-    for element in instance._data:
-        ocorrence_info = {
-            'palavra': word,
-            'arquivo': element['nome_do_arquivo'],
-            'ocorrencias': []
+    # para cada elemento da lista
+    for index in range(len(instance)):
+        # elemento buscado pelo indice
+        file = instance.search(index)
+        # informações
+        data_info = {
+            "palavra": word,
+            "arquivo": file["nome_do_arquivo"],
+            "ocorrencias": [],
         }
 
-        for index, line in enumerate(element['linhas_do_arquivo']):
-            line_minus_period = line.replace('.', '')
-            if word.lower() in line_minus_period.lower().split():
-                ocorrence_info['ocorrencias'].append({
-                    'linha': index + 1,
-                    'conteudo': line
-                })
+        linha = 0
 
-        if len(ocorrence_info['ocorrencias']) > 0:
-            occurrences.append(ocorrence_info)
+        # Para cada elemento no conjunto de linhas
+        for index in file["linhas_do_arquivo"]:
+            # buscar a palavra em caixa baixa, no texto em caixa baixa
+            if word.lower() in index.lower():
+                linha += 1
+                # adiciona no array de ocorrências
+                data_info["ocorrencias"].append(
+                    {
+                      "linha": linha,
+                      "conteudo": index,
+                    }
+                )
 
-    return occurrences
+        search_info = []
+        # se exisitir ocorrênica, adicionar ao array
+        if len(data_info["ocorrencias"]) > 0:
+            search_info.append(data_info)
+
+    return search_info
 
 
+# TESTE MANUAL
+# from ting_file_management.queue import Queue
+# from ting_file_management.file_process import process
+# project = Queue()
+# process("statics/nome_pedro.txt", project)
+# print(search_by_word("pedro", project))
+    
 # teste automatizado
 # python3 -m pytest tests/test_word_search.py
