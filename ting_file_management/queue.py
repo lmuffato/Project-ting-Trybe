@@ -19,8 +19,8 @@ class Queue:
     def dequeue(self):
         # remove o dado no topo da lista
         return self.list.pop(0)
-        
-    # BUSCAR DADO    
+
+    # BUSCAR DADO
     def search(self, index):
         # Se o index for menor que 0 ou maior que a lista
         if(index < 0 or index > len(self.list)):
